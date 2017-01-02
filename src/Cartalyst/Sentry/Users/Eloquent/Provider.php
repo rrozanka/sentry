@@ -125,6 +125,8 @@ class Provider implements ProviderInterface {
 		// build query from given credentials
 		foreach ($credentials as $credential => $value)
 		{
+            $value = trim($value);
+
 			// Remove hashed attributes to check later as we need to check these
 			// values after we retrieved them because of salts
 			if (in_array($credential, $hashableAttributes))
